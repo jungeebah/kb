@@ -1,5 +1,6 @@
 import { Stack, Container } from '@chakra-ui/react'
 import Header from './Header'
+import Footer from './Footer'
 
 const Layout = ({ children, config }) => {
     return (
@@ -7,6 +8,7 @@ const Layout = ({ children, config }) => {
             <Stack>
                 <Header config={config} />
                 {children}
+                <Footer />
             </Stack>
         </Container>
     )
