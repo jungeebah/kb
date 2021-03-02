@@ -6,8 +6,9 @@ const Heading = ({ type, children }) => {
             mt="2"
             fontWeight="semibold"
             lineHeight="tight"
+            key={type}
         >
-            <Text fontSize={type === "h1" ? "lg" : "md"}>{children}</Text>
+            <Text fontSize={type === "h1" ? "lg" : "md"} key={type}>{children}</Text>
         </Box>
 
     )

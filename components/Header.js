@@ -3,9 +3,12 @@ import {
     Box,
     Text,
     useColorMode,
-    IconButton, Link
+    IconButton,
+    Link,
+    Spacer
 } from '@chakra-ui/react'
-import { SunIcon, MoonIcon } from '@chakra-ui/icons'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons';
+import { AiFillHome } from 'react-icons/ai'
 
 
 const Header = (props) => {
@@ -18,7 +21,13 @@ const Header = (props) => {
                         {props.config.title}
                     </Link>
                 </Text>
-                <IconButton aria-label="Search database" icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />} onClick={toggleColorMode} />
+                <Flex direction="row">
+                    <Link href="/">
+                        <IconButton arial-label="Home" icon={<AiFillHome />} />
+                    </Link>
+                    <Spacer m={2}/>
+                    <IconButton aria-label="Search database" icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />} onClick={toggleColorMode} />
+                </Flex>
             </Flex>
         </Box>
     )
