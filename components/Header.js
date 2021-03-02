@@ -8,7 +8,7 @@ import {
     Spacer
 } from '@chakra-ui/react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
-import { AiFillHome } from 'react-icons/ai'
+import { AiFillHome } from 'react-icons/ai';
 
 
 const Header = (props) => {

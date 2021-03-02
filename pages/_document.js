@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript, Html } from 'next/document'
 
+
 export default class SiteDocument extends Document {
     render() {
         return (
@@ -15,6 +16,7 @@ export default class SiteDocument extends Document {
                     <meta name="theme-color" content="#ffffff" />
                 </Head>
                 <body>
+                    <script src="./noflash.js" />
                     <div className="root">
                         <Main />
                     </div>
