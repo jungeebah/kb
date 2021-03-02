@@ -1,9 +1,9 @@
-import { Stack, Box, Link, Flex } from '@chakra-ui/react'
+import {  Box, Link, Flex } from '@chakra-ui/react'
 
 const Footer = () => {
     return (
         <Box>
-            <Flex as="footer" direction="row" marginTop="2rem" fontSize="sm">
+            <Flex as="footer" direction="row" marginTop="2rem" fontSize="sm" mb={1} p ={4}>
                 <Box  >
                     © {new Date().getFullYear()} Ke Bhayoo
                 </Box>
