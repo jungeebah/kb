@@ -16,13 +16,13 @@ var Elements = PrismicDOM.RichText.Elements;
 
 const HtmlSerializer = function (type, element, content, children) {
     switch (type) {
-        case Elements.heading1: return <Heading type="h1" children={children.join('')} key={element} />;
-        case Elements.heading2: return <Heading type="h2" children={children.join('')} key={element} />;
+        case Elements.heading1: return <Heading type="h1" children={children.join('')} key={element['text']} />;
+        case Elements.heading2: return <Heading type="h2" children={children.join('')} key={element['text']} />;
         case Elements.heading3: return `< h3 > ${children.join('')}</h3 > `;
         case Elements.heading4: return `< h4 > ${children.join('')}</h4 > `;
         case Elements.heading5: return `< h5 > ${children.join('')}</h5 > `;
         case Elements.heading6: return `< h6 > ${children.join('')}</h6 > `;
-        case Elements.paragraph: return <Paragraph children={[element]} key={element} />;
+        case Elements.paragraph: return <Paragraph children={[element]} key={element['text']} />;
         case Elements.preformatted: return `< pre > ${children.join('')}</pre > `;
         case Elements.strong: return `< strong > ${children.join('')}</strong > `;
         case Elements.em: return `< em > ${children.join('')}</em > `;
@@ -43,7 +43,7 @@ const HtmlSerializer = function (type, element, content, children) {
         case Elements.hyperlink:
             var target = element.data.target ? `target = "${element.data.target}" rel = "noopener"` : '';
             var linkUrl = PrismicDOM.Link.url(element.data, linkResolver);
-            return <Links url={linkUrl} children={children.join('')} />
+            return <Links url={linkUrl} children={children.join('')} key={element['data']['url']} />
         case Elements.label:
             var label = element.data.label ? ` class="${element.data.label}"` : '';
             return `< span ${label}> ${children.join('')}</span > `;

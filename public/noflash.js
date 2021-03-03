@@ -21,7 +21,7 @@
     } catch (err) { }
     var localStorageExists = localStorageTheme !== null;
     if (localStorageExists) {
-        localStorageTheme = JSON.parse(localStorageTheme);
+        localStorageTheme = localStorageTheme;
     }
 
     // Determine the source of truth

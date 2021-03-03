@@ -33,7 +33,7 @@ export async function getStaticProps() {
   const today = result['data']
   const posts = await client.query(
     Prismic.Predicates.at("document.type", "test"),
-    { orderings: "[my.test.date desc]", pageSize: 50 }
+    { orderings: "[document.last_publication_date desc]", pageSize: 50 }
   )
   const newsPost = posts.results
   return {
